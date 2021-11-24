@@ -28,7 +28,7 @@ def legendre(a, n):
     if a % 2 == 0:
         r = legendre(a//2, n)
         
-        if n**2 - 1 & 8 != 0:
+        if pow(n, 2) - 1 & 8 != 0:
             r *= -1
     else:
         r = legendre(n%a, a)
@@ -52,8 +52,9 @@ def SolovayStressen(n, k):
     for _ in range(k):
         a = random.randint(2, n-1)
         x = legendre(a, n)
+        aux = (n-1)//2
 
-        if x == 0 or (a**((n-1)//2)%n) != (x % n):
+        if x == 0 or (pow(a, aux) % n) != (x % n):
             return False
 
     return True

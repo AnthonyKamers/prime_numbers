@@ -12,7 +12,7 @@
     # https://github.com/VSpike/BBS/tree/9be96e30acd072db61ed2c05ba4c1a5044ea554e
 #############################################################
 
-from RandomGenerator import generate_prime_number
+from .RandomGenerator import generate_prime_number
 
 class BBSGenerator:
     def __init__(self, seed = 3, sizeBit = 2048, sizeBit1 = None):
@@ -41,7 +41,7 @@ class BBSGenerator:
             randomNumber = self.next() % (2 ** self.sizeBit)
 
             if (len(bin(randomNumber)[2::])) == self.sizeBit:
-                print(randomNumber)
+                return randomNumber
                 break
 
 def main():

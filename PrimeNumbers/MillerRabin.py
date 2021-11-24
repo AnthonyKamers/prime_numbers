@@ -45,13 +45,13 @@ def MillerRabin(n, k):
     # continuação do algoritmo
     for _ in range(k):
         a = random.randint(2, n-1)
-        x = (a**d) % n
+        x = pow(a, d, n) # x = (a**d) % n # trocado por ser mais eficiente
 
         if x == 1 or x == n-1:
             continue
 
         for _ in range(r-1):
-            x = (x**2) % n
+            x = pow(x, 2, n) # x = (x**2) % n # trocado por ser mais eficiente
 
             if x == n-1:
                 break

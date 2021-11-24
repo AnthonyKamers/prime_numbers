@@ -40,7 +40,7 @@ class FibonacciGenerator:
         while True:
             randomNumber = self.next()
             if (len(bin(randomNumber)[2::])) == self.sizeBit:
-                print(randomNumber)
+                return randomNumber
                 break
 
 # função auxiliar para transformar número em lista de números

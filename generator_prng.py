@@ -1,25 +1,11 @@
-import time
-from BBSGenerator import BBSGenerator
-from FibonacciGenerator import FibonacciGenerator
-
-# calcular o tempo de uma função
-# https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
-def profile(fct):
-  def wrapper(*args, **kw):
-    start_time = time.time()
-    ret = fct(*args, **kw)
-    print("{} {} {} return {} in {} seconds".format(args[0].__class__.__name__,
-                                                    args[0].__class__.__module__,
-                                                    fct.__name__,
-                                                    ret,
-                                                    time.time() - start_time))
-    return ret
-  return wrapper
+from PRNG.FibonacciGenerator import FibonacciGenerator
+from PRNG.BBSGenerator import BBSGenerator
+from utils import *
 
 @profile
 def calcularProcessamento(generator, tamanho):
     print(tamanho)
-    generator.generateNumOfBits()
+    print(generator.generateNumOfBits())
 
 def main():
     tamanhoBits = [40, 56, 80, 128, 168, 224, 256, 512, 1024, 2048, 4096]
@@ -27,7 +13,6 @@ def main():
     # para cada tamanho em bits, rodar os algoritmos geradores de números
     # pseudo-aleatórios e calcular o tempo de processamento para fazer
     # a planilha com comparações de resultado
-
     for tamanho in tamanhoBits:
         fib = FibonacciGenerator(sizeBit=tamanho)
         calcularProcessamento(fib, tamanho)
