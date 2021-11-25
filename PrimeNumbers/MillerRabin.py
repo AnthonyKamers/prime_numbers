@@ -22,7 +22,7 @@ return “probably prime”
     # https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/
 #############################################################
 
-import random
+import random # para pegar números aleatórios dentro do "range" de números
 
 # n = valor de teste de primalidade
 # k = parâmetro que determina a precisão do teste

@@ -16,7 +16,7 @@ return probably prime
     # https://www.geeksforgeeks.org/primality-test-set-4-solovay-strassen/
 #############################################################
 
-import random
+import random # para pegar números aleatórios dentro do "range" de números
 
 # função auxiliar usada para resolver primalidade
 # de Euler, no algoritmo de Solovay-Stressen,
